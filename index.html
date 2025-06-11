@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linktree</title>
+    <style>
+        body {
+            background: url('./img/favela-tech1.png') no-repeat center top fixed;
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        @media (max-width: 640px) {
+            body {
+                background: url('./img/favela-tech-mobile3.png') no-repeat center top fixed;
+                background-size: cover;
+            }
+            .container {
+                background: rgba(0, 0, 0, 0.5); /* Mais transparência no mobile */
+            }
+            .profile-img {
+                display: none !important; /* Esconde a imagem no mobile */
+            }
+            .link-button {
+                font-size: 14px; /* Reduz tamanho da fonte dos botões */
+                padding: 12px; /* Ajusta padding para melhor adaptação */
+                white-space: nowrap; /* Mantém os textos em uma linha */
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.6); /* Transparência de 60% aplicada */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: block;
+            object-fit: cover;
+            border: 3px solid white;
+        }
+        h1 {
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            color: #FFD700;
+            font-weight: bold;
+        }
+        .link-button {
+            background: rgba(255, 255, 255, 0.5); /* Botões com 50% de transparência */
+            display: block;
+            color: #000;
+            padding: 15px;
+            margin: 10px auto;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            width: 90%;
+            max-width: 350px;
+            box-shadow: 5px 5px 0px black;
+            transition: all 0.3s ease-in-out;
+        }
+        .link-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 8px 8px 0px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="./img/fernando.jpeg" alt="Logo" class="profile-img">
+        <h1>Fernando Oliveira</h1>
+        <h4>Mentor, Coach, Vendedor e Especialista Comportamental</h4>
+        <p>
+            <strong>Apaixonado em motivar pessoas para alavancar os resultados que elas desejam!</strong>
+        </p>
+        <a href="https://afroit.com.br/" class="link-button" target="_blank">AfroIt</a>
+        <a href="https://gotech.education" class="link-button" target="_blank">Gotech.Education</a>
+        <a href="https://www.linkedin.com/in/fernando-oliveira-27199b57" class="link-button" target="_blank">Linkedin</a>
+        <!-- WhatsApp para desktop -->
+        <a href="https://web.whatsapp.com/send/?phone=5519988375209&text&type=phone_number&app_absent=0"
+        class="link-button whatsapp-desktop" target="_blank">
+        WhatsApp
+        </a>
+
+        <!-- WhatsApp para mobile -->
+        <a href="https://wa.me/5519988375209" class="link-button whatsapp-mobile" target="_blank">
+        WhatsApp
+        </a>
+    </div>
+</body>
+
+<style>
+  .whatsapp-desktop,
+  .whatsapp-mobile {
+    display: none;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const isMobile = /iPhone|Android|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      document.querySelector('.whatsapp-mobile')?.style.setProperty('display', 'block');
+    } else {
+      document.querySelector('.whatsapp-desktop')?.style.setProperty('display', 'block');
+    }
+  });
+</script>
+</html>
